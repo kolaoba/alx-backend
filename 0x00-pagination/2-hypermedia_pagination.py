@@ -74,8 +74,8 @@ class Server:
         next_page: number of the next page, None if no next page
         prev_page: number of the previous page, None if no previous page
         total_pages: the total number of pages in the dataset as an integer
-        
-        
+
+
         Args:
             page (int, optional): _description_. Defaults to 1.
             page_size (int, optional): _description_. Defaults to 10.
@@ -83,13 +83,13 @@ class Server:
         Returns:
             List[List]: _description_
         """
-        
+
         data = self.get_page(page, page_size)
         p_size = len(data)
-        next_page = None if not data else page + 1
+        total_pages = math.ceil(len(self.__dataset) / page_size)
+        next_page = None if page >= total_pages else page + 1
         prev_page = page - 1 if page - 1 > 0 else None
-        total_pages = math.ceil(len(self.__dataset) / page_size) 
-        
+
         return {
             "page_size": p_size,
             "page": page,
