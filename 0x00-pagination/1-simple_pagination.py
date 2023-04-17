@@ -60,7 +60,7 @@ class Server:
 
         # load dataset
         self.dataset()
-        
+
         try:
             return self.__dataset[start_idx:end_idx]
         except IndexError:
