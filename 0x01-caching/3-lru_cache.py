@@ -16,11 +16,15 @@ class LRUCache(BaseCaching):
         if key is None or item is None:
             return
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            popped_key, v = self.cache_data.popitem()
+            popped_key = list(self.cache_data.keys())[0]
+            self.cache_data.pop(popped_key)
             print("DISCARD: {}".format(popped_key))
         self.cache_data[key] = item
 
     def get(self, key):
         """ Get an item by key
         """
+        if key in self.cache_data:
+            v = self.cache_data.pop(key)
+            self.cache_data[key] = v
         return self.cache_data.get(key)
