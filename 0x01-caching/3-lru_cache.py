@@ -5,12 +5,11 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 class LRUCache(BaseCaching):
     """Defines the LRU Cache"""
-    
+
     def __init__(self) -> None:
         """Initializes the class instance"""
         super().__init__()
-    
-    
+
     def put(self, key, item):
         """ Add an item in the cache
         """
