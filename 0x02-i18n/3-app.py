@@ -4,6 +4,7 @@ Basic Babel Setup
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel
+import babel
 
 
 class Config:
@@ -27,8 +28,8 @@ def get_locale():
 
 @app.route('/')
 def render_index():
-    """renders 2-index.html"""
-    return render_template('2-index.html')
+    """renders 3-index.html"""
+    return render_template('3-index.html')
 
 
 if __name__ == "__main__":
