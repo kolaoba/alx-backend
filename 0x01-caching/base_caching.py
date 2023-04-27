@@ -33,3 +33,8 @@ class BaseCaching():
         """
         raise NotImplementedError(
             "get must be implemented in your cache class")
+
+    def get(self, key):
+        """ Get an item by key
+        """
+        raise NotImplementedError("get must be implemented in your cache class")

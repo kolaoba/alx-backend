@@ -5,11 +5,12 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 class FIFOCache(BaseCaching):
     """Defines the FIFO Cache"""
-
+    
     def __init__(self) -> None:
         """Initializes the class instance"""
         super().__init__()
-
+    
+    
     def put(self, key, item):
         """ Add an item in the cache
         """
